@@ -27,18 +27,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    @articles = Articles.find(params[:id])
+    @post = Post.find(params[:id])
     erb :show
   end
 
   get '/posts/:id/edit' do
-    @articles = Articles.find(params[:id])
+    @post = Post.find(params[:id])
     erb :edit
   end
 
   patch '/posts/:id' do
-    Articles.update(params[:id], name: params[:name], content: params[:content])
-    @articles = Articles.find(params[:id])
+    Post.update(params[:id], name: params[:name], content: params[:content])
+    @post = Articles.find(params[:id])
     erb :show
   end
 
