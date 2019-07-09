@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts' do
-    @articles = Articles.all
+    @posts = Post.all
     erb :index
   end
 
