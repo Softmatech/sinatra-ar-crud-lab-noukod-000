@@ -17,7 +17,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles' do
-
+      Articles.create(params)
+      redirect '/Articles'
   end
 
 end
