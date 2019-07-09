@@ -1,5 +1,5 @@
 Edited Posts
-<form method="post" action="/posts/<%= @posts.id %>">
+<form method="post" action="/posts/<%= @post.id %>">
   Name <input type="text" name="name" value=<%= @posts.name %>>
   Content <input type="text" name="content" value=<%= @posts.content %>>
   <input id="hidden" type="hidden" name="_method" value="patch">
