@@ -12,31 +12,31 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  get '/articles/new' do
+  get '/posts/new' do
     erb :new
   end
 
-  post '/articles' do
+  post '/posts' do
       Articles.create(params)
       redirect '/Articles'
   end
 
-  get '/articles' do
+  get '/posts' do
     @articles = Articles.all
     erb :index
   end
 
-  get '/articles/:id' do
+  get '/posts/:id' do
     @articles = Articles.find(params[:id])
     erb :show
   end
 
-  get '/articles/:id/edit' do
+  get '/posts/:id/edit' do
     @articles = Articles.find(params[:id])
     erb :edit
   end
 
-  patch '/articles/:id' do
+  patch '/posts/:id' do
     Articles.update(params[:id], name: params[:name], content: params[:content])
     @articles = Articles.find(params[:id])
     erb :show
